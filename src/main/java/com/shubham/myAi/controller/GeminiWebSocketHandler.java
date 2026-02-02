@@ -33,7 +33,7 @@ public class GeminiWebSocketHandler extends TextWebSocketHandler {
     @Override
     protected void handleTextMessage(WebSocketSession session, TextMessage message) throws IOException {
         String userInput = message.getPayload().trim().toLowerCase();
-        System.out.println("🔹 Original User Input: " + userInput);
+        System.out.println(" Original User Input: " + userInput);
 
         String response;
         String isSqlQuery = isEcommerceQuery(userInput);
@@ -148,10 +148,10 @@ public class GeminiWebSocketHandler extends TextWebSocketHandler {
                     return parts.get(0).path("text").asText();
                 }
             }
-            return "⚠️ No text found in response";
+            return " No text found in response";
         } catch (Exception e) {
             e.printStackTrace();
-            return "⚠️ Failed to parse Gemini response";
+            return " Failed to parse Gemini response";
         }
     }
 
